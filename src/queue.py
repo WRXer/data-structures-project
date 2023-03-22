@@ -62,10 +62,15 @@ class Queue:
             self.tail = self.tail.next_node
             self.tail.next_node = None
 
-    def dequeue(self, data):
+    def dequeue(self):
         """
         Метод для удаления элемента из очереди. Возвращает данные удаленного элемента
 
         :return: данные удаленного элемента
         """
-        pass
+        if self.head == None:
+            return None
+        else:
+            last_node = self.head
+            self.head = self.head.next_node
+        return last_node.data

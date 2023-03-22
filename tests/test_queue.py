@@ -37,3 +37,11 @@ class TestQueue(unittest.TestCase):
         self.assertIsNone(queue.head)
         queue.enqueue("test")
         self.assertEqual(queue.head.data, "test")
+
+    def test_dequeue(self):
+        queue = Queue()
+        self.assertIsNone(queue.head)
+        queue.enqueue("test")
+        self.assertEqual(queue.head.data, "test")
+        queue.dequeue()
+        self.assertNotEqual(queue.head.data, "test")

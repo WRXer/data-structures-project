@@ -18,6 +18,7 @@ class TestQueue(unittest.TestCase):
         Тест __str__
         """
         queue = Queue()
+        assert str(queue) == ""
         queue.enqueue("test")
         assert str(queue) == "test"
 
@@ -26,6 +27,7 @@ class TestQueue(unittest.TestCase):
         Тест для __repr__
         """
         queue = Queue()
+        assert str(queue) == ""
         queue.enqueue("test")
         assert repr(queue) == "test"
 
@@ -40,8 +42,9 @@ class TestQueue(unittest.TestCase):
 
     def test_dequeue(self):
         queue = Queue()
-        self.assertIsNone(queue.head)
+        self.assertEqual(queue.head, None)
         queue.enqueue("test")
+        queue.enqueue("test2")
         self.assertEqual(queue.head.data, "test")
         queue.dequeue()
         self.assertNotEqual(queue.head.data, "test")

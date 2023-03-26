@@ -20,14 +20,14 @@ class TestQueue(unittest.TestCase):
         queue = Queue()
         self.assertEqual(str(queue), "")
         queue.enqueue("test")
-        self.assertEqual(repr(queue), "test")
+        self.assertEqual(str(queue), "test")
 
     def test_repr(self):
         """
         Тест для __repr__
         """
         queue = Queue()
-        self.assertEqual(str(queue), "")
+        self.assertEqual(repr(queue), "")
         queue.enqueue("test1")
         self.assertEqual(repr(queue), "test1")
 

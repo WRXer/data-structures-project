@@ -39,11 +39,11 @@ class TestLinkedList(unittest.TestCase):
 
     def test_str(self):
         """
-                Тест __str__
-                """
+        Тест __str__
+        """
         ll = LinkedList()
-        assert str(ll) == "None"
+        self.assertEqual(str(ll), "None")
         ll.insert_beginning("test")
-        assert str(ll) == "test -> None"
+        self.assertEqual(str(ll), "test -> None")
         ll.insert_beginning("test2")
-        assert str(ll) == "test2 -> test -> None"
+        self.assertEqual(str(ll), "test2 -> test -> None")

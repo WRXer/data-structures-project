@@ -18,18 +18,18 @@ class TestQueue(unittest.TestCase):
         Тест __str__
         """
         queue = Queue()
-        assert str(queue) == ""
+        self.assertEqual(str(queue), "")
         queue.enqueue("test")
-        assert str(queue) == "test"
+        self.assertEqual(repr(queue), "test")
 
     def test_repr(self):
         """
         Тест для __repr__
         """
         queue = Queue()
-        assert str(queue) == ""
-        queue.enqueue("test")
-        assert repr(queue) == "test"
+        self.assertEqual(str(queue), "")
+        queue.enqueue("test1")
+        self.assertEqual(repr(queue), "test1")
 
     def test_enqueue(self):
         """

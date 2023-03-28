@@ -47,3 +47,24 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(str(ll), "test -> None")
         ll.insert_beginning("test2")
         self.assertEqual(str(ll), "test2 -> test -> None")
+
+    def test_to_list(self):
+        """
+        Тест to_list
+        """
+        ll = LinkedList()
+        self.assertEqual(type(ll.to_list()), list)
+        ll.insert_beginning("test")
+        ll.insert_beginning("test2")
+        self.assertEqual(ll.to_list(), ["test2", "test"])
+
+    def test_get_data_by_id(self):
+        ll = LinkedList()
+        ll.insert_beginning({'id': 1, 'username': 'test'})
+        ll.insert_at_end({'id': 2, 'username': 'test2'})
+        self.assertEqual(ll.get_data_by_id(1), {'id': 1, 'username': 'test'})
+
+    def test_get_data_by_id_type_error(self):
+        ll = LinkedList()
+        ll.insert_beginning("testt")
+        self.assertIsNone(ll.get_data_by_id(10))
